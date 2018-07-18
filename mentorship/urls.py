@@ -22,6 +22,7 @@ from mentorship_profile import views as profile_views
 from mentorship_pairing import views as pairing_views
 
 urlpatterns = [
+    url(r'^react/', TemplateView.as_view(template_name='index.html')),
     url(r'^admin/', admin.site.urls),
     url(r'', include('django.contrib.auth.urls')),
     url(r'^$', general_views.show_homepage_view, name="home"),
