@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'supersecret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['react-django.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
@@ -142,6 +142,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mentorship', 'static'),
     os.path.join(BASE_DIR, 'build/static'),
 )
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 if os.environ.get("APP_ENV", "") == "PROD":
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
